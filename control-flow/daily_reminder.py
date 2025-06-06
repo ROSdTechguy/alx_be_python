@@ -1,17 +1,25 @@
-# pattern_drawing.py
+#!/bin/bash
+Task = input("Enter your task: ").strip().capitalize()
+Priority = input("Priority(high/medium/low): ").strip().lower()
+Time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
+yes_time = "that requires immediate attention today!"
+no_time = "consider completing when you have time"
 
-# Prompt the user to enter a positive integer for the pattern size
-size = int(input("Enter the size of the pattern: "))
+match Priority:
+    case "high":
+        if Time_bound == "yes":
+            print(f"Reminder: '{Task}' is a {Priority} priority task{yes_time}")
+        elif Time_bound == "no":
+            print(f"Reminder: '{Task}' is a {Priority} priority task{no_time}")
+    
+    case "medium":
+        if Time_bound == "yes":
+            print(f"Attention: '{Task}' is a {Priority} priority task{yes_time}")
+        elif Time_bound == "no":
+            print(f"Attention: '{Task}' is a {Priority} priority task{yes_time}")
 
-# Ensure the input is a positive integer
-if size > 0:
-    # Initialize the row counter
-    row = 0
-    while row < size:  # Iterate through each row
-        for col in range(size):  # For each column in the current row
-            print("*", end="")  # Print asterisks on the same line
-        print()  # Move to the next line after completing the row
-        row += 1  # Increment the row counter
-else:
-    print("Invalid input. Please enter a positive integer.")
-
+    case "low":
+        if Time_bound == "yes":
+            print(f"Note: '{Task}' is a {Priority} priority task{yes_time}")
+        elif Time_bound == "no":
+            print(f"Note: '{Task}' is a {Priority} priority task{yes_time}")

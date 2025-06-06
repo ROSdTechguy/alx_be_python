@@ -1,8 +1,6 @@
-# Prompt the user for their current age
-current_age = int(input("How old are you? "))
-
-# Calculate the age in 2050
-age_in_2050 = current_age + 27
-
-# Print the result
-print(f"In 2050, you will be {age_in_2050} years old.")
+#!/bin/bash
+current_year = 2023
+current_age = 27
+age = input("How old are you? ")
+age_in_2050 = current_age + int(age)
+print("In 2050, you will be " + str(age_in_2050) + " years old ")

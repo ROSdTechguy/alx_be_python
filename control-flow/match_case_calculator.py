@@ -1,19 +1,20 @@
-# match_case_calculator
-Numb1 = int(input("Enter the first number: "))
-Numb2 = int(input("Enter the second number: "))
-Operation = input("Choose the operation (+, -, *, /): ")
-
-match Operation:
+#!/bin/bash
+number1 = float(input("Enter the first number: "))
+number2 = float(input("Enter the second number: "))
+operation = input("Choose the operation (+, -, *, /): ")
+match operation:
     case "+":
-        print(Numb1 + Numb2)
+        result = number1 + number2 
+        print("The result is", result)
     case "-":
-        print(Numb1 - Numb2)
+        result = number1 - number2
+        print("The result is", result)
     case "*":
-        print(Numb1 * Numb2)
+        result = number1 * number2
+        print("The result is", result)
     case "/":
-        if Numb2 != 0:
-            print(Numb1 / Numb2)
+        if number2 != 0:
+            result = number1 / number2
+            print("The result is", result)
         else:
-            print("Error: Division by zero is not allowed.")
-    case _:
-        print("Invalid operation selected.")
+            print("Cannot divide by zero.")
